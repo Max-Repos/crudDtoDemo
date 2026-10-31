@@ -1,0 +1,35 @@
+**MacBook Git/GitHub Setup — 31 Oct 2026**
+
+**Environment:** MacBook Air, macOS, Homebrew, Spring Boot project `crudDtoDemo`.
+
+**Completed:**
+- Installed/configured Git using Homebrew.
+- Configured Git username and email.
+- Generated an ED25519 SSH key.
+- Added the public SSH key to GitHub.
+- Verified SSH authentication successfully.
+
+**GitHub account:** `Max-Repos`
+
+**Current issue:** `git push -u origin main` returns `ERROR: Repository not found.`
+
+**Likely cause:** The `crudDtoDemo` repository has not been created under `Max-Repos`, or the remote URL is incorrect.
+
+**Next steps:**
+1. Visit https://github.com/Max-Repos?tab=repositories and check whether `crudDtoDemo` exists.
+2. If missing, create it at https://github.com/new with the name `crudDtoDemo`. Leave README, `.gitignore`, and license unchecked.
+3. Configure the remote:
+   ```bash
+   git remote set-url origin git@github.com:Max-Repos/crudDtoDemo.git
+   ```
+4. Verify the remote:
+   ```bash
+   git remote -v
+   ```
+5. Push the project:
+   ```bash
+   git branch -M main
+   git push -u origin main
+   ```
+
+**Important:** SSH authentication is working. The remaining issue is repository existence, ownership, or the remote URL.
